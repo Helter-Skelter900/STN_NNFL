@@ -8,7 +8,7 @@ x_train, y_train, x_val, y_val, x_test, y_test = starter()
 
 model = models.Sequential()
 
-model.add(layers.Conv2D(filters=32, kernel_size = (3,3), activation='relu', padding = 'same', input_shape = (28,28)))
+model.add(layers.Conv2D(filters=32, kernel_size = (3,3), activation='relu', padding = 'same', input_shape = (None, 28,28)))
 
 model.add(layers.MaxPooling2D(pool_size = (2,2)))
 
