@@ -3,12 +3,16 @@ from tensorflow.keras import layers, models
 import matplotlib.pyplot as plt
 from mnist_keras_load import starter
 import numpy as np
+from augmentation import aug_data
+from appendNshuffle import append_shuffle
 
 x_train, y_train, x_val, y_val, x_test, y_test = starter()
+train_aug, val_aug, test_aug = aug_data(x_train, x_val, x_test)
+x_train, y_train, x_val, y_val, x_test, y_test = append_shuffle(x_train, y_train, x_val, y_val, x_test, y_test, train_aug, val_aug, test_aug)
 
 model = models.Sequential()
 
-model.add(layers.Conv2D(filters=32, kernel_size = (3,3), activation='relu', padding = 'same', input_shape = (28,28,1)))
+model.add(layers.Conv2D(filters=32, kernel_size = (3,3), activation='relu', padding = 'same', input_shape = (40,40,1)))
 
 model.add(layers.MaxPooling2D(pool_size = (2,2)))
 
