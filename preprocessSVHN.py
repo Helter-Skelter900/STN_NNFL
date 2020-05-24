@@ -1,4 +1,5 @@
 import tensorflow as tf
+import numpy as np
 
 def preprocess(x_train, x_test):
     x_train = np.rollaxis(x_train)
