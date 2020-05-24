@@ -8,10 +8,10 @@ from utils import get_initial_weights
 
 
 def STN_Model(input_shape=(40, 40, 1), sampling_size=(40, 40), num_classes=10, reg=0.00, drop_rate=0.00):
-	#Input
+	# Input
 	STN_Input = keras.Input(shape=input_shape, name = 'STN_Input')
 
-	#Layers for localization network
+	# Layers for localization network
 	locnet = layers.Conv2D(16, (3,3), activation = 'relu', kernel_regularizer=tf.keras.regularizers.l2(reg))(STN_Input)
 	locnet = layers.MaxPool2D(pool_size=(2, 2))(locnet)
 	locnet = layers.Conv2D(8, (4,4), activation = 'relu', kernel_regularizer=tf.keras.regularizers.l2(reg))(locnet)
