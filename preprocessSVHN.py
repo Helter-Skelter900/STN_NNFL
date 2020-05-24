@@ -14,6 +14,6 @@ def preprocess(x_train, x_test, y_train, y_test):
     x_train = x_train/255
     x_test = x_test/255
 
-    return x_train, x_test
+    return x_train, x_test, y_train, y_test
 
 
