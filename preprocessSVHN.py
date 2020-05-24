@@ -2,8 +2,8 @@ import tensorflow as tf
 import numpy as np
 
 def preprocess(x_train, x_test):
-    x_train = np.rollaxis(x_train)
-    x_test = np.rollaxis(x_test)
+    x_train = np.rollaxis(x_train,3)
+    x_test = np.rollaxis(x_test,3)
 
     y_train[y_train==10]=0
     y_test[y_test==10]=0
