@@ -1,7 +1,7 @@
 import tensorflow as tf
 import numpy as np
 
-def preprocess(x_train, x_test):
+def preprocess(x_train, x_test, y_train, y_test):
     x_train = np.rollaxis(x_train,3)
     x_test = np.rollaxis(x_test,3)
 
